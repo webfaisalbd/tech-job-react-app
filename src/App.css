@@ -33,6 +33,8 @@ header {
   
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  /* padding: 0 100px; */
 }
 
 header h1 {
@@ -183,5 +185,10 @@ span {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .jobs_body {
+    margin: 0 15px;
+    margin-top: -25px;
   }
 }

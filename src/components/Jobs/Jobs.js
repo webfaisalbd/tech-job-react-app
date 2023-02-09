@@ -8,6 +8,7 @@ import jobs from '../../data/data';
 const Jobs = () => {
   const [jobsData, setJobsData] = useState(jobs);
   const [searchText, setSearchText] = useState('');
+  const [locationText, setLocationText] = useState('');
   // console.log(searchText);
 
   // filter By Job
@@ -27,6 +28,15 @@ const Jobs = () => {
   }
 
 
+  // handle location
+  const handleLocation = () => {
+    const filteredLocation = jobs.filter((job)=> {
+      return job.location.toLowerCase().includes(locationText);
+    })
+    setJobsData(filteredLocation);
+  }
+
+
   return (
     <div className='jobs_body'>
       <div className="jobs_container">
@@ -39,8 +49,8 @@ const Jobs = () => {
           </div>
           <div className="search_item2">
             <span><GoLocation /></span>
-            <input type="text" name="" id="" placeholder='Search by Job location' />
-            <button className='btn'>Search</button>
+            <input type="text" onChange={(e)=> setLocationText(e.target.value)} placeholder='Search by Job location' />
+            <button className='btn' onClick={handleLocation}>Search</button>
           </div>
           {/* filter by job type: remote/full time */}
           <div className="search_item3">
@@ -59,13 +69,13 @@ const Jobs = () => {
         <section className='job_output'>
           <div className="job_output_box">
             {
-              jobsData.filter((jobData)=> {
+              jobsData?.filter((jobData)=> {
                 return jobData.position.toLowerCase().includes(searchText) || jobData.company.toLowerCase().includes(searchText);
               })
               .map((jobData, i) => (
                 <div key={i} className="job_output_item">
                   <img src={jobData.logo} alt="" />
-                  <p className='postedAt'>{jobData.postedAt}</p>
+                  <p className='postedAt'>{jobData.postedAt} - {jobData.contract}</p>
                   <Link to={jobData.position}><h3 className='position'>{jobData.position}</h3></Link>
                   <p className='company'>{jobData.company}</p>
                   <p className='location'>Location: <span className='location_details'>{jobData.location}</span></p>
