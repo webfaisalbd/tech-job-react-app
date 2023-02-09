@@ -1,8 +1,12 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const JobDetails = () => {
+  const { position } = useParams();
   return (
-    <div>JobDetails</div>
+    <div>
+      <p>hello {position}</p>
+    </div>
   )
 }
 

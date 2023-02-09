@@ -155,12 +155,17 @@ span {
   color: blue;
 }
 
-
-
 .job_output_item img {
   width: 50px;
   height: 50px;
 }
+
+.job_output_item a {
+  text-decoration: none;
+  color: #000000
+}
+
+
 
 
 /* job output end */

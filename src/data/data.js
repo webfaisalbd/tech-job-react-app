@@ -339,6 +339,40 @@ const jobs = [
         ],
       },
     },
+    {
+      id: 11,
+      companySite: "#",
+      company: "Photosnap",
+      logo: "company/photosnap.svg",
+      position: "DevOps Engineer",
+      postedAt: "1d ago",
+      contract: "Remote",
+      location: "Germany",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, reiciendis totam, magnam voluptatibus ut veniam harum voluptatem eaque ab tempora eius iusto dignissimos labore? Assumenda quam natus beatae sapiente repellat neque ea aspernatur cumque rem esse? Sapiente soluta repellat earum iusto nulla! Totam optio nobis laborum nemo tempora, quod fugiat.",
+      requirements: {
+        reqTitle:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur earum totam error aliquam explicabo aspernatur, ratione fugit dolorem, porro est commodi modi ipsam at eos hic optio quasi? Est!",
+  
+        reqItem: [
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+        ],
+      },
+  
+      responsibility: {
+        resTitle:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur earum totam error aliquam explicabo aspernatur, ratione fugit dolorem, porro est commodi modi ipsam at eos hic optio quasi? Est!",
+  
+        resItem: [
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, corrupti.",
+        ],
+      },
+    }
   ];
   
   export default jobs;

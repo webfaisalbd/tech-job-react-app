@@ -1,12 +1,29 @@
 import React, { useState } from 'react'
 import { BiSearch } from 'react-icons/bi';
 import { GoLocation } from 'react-icons/go'
+import { Link } from 'react-router-dom';
 
-import data from '../../data/data';
+import jobs from '../../data/data';
 
 const Jobs = () => {
-  const [jobs, setJobs] = useState(data);
-  console.log(jobs);
+  const [jobsData, setJobsData] = useState(jobs);
+  // console.log(jobsData);
+
+  // filter By Job
+  const filterByJobNature = (e) => {
+    const filterData = e.target.value;
+    const filteredOutput = jobs.filter((job) => {
+      return (job.contract === filterData);
+    })
+    // console.log(filteredOutput);
+    if(filterData === 'Filter job by'){
+      setJobsData(jobs);
+    }else {
+      setJobsData(filteredOutput);
+    }
+  }
+
+
   return (
     <div className='jobs_body'>
       <div className="jobs_container">
@@ -21,14 +38,15 @@ const Jobs = () => {
             <input type="text" name="" id="" placeholder='Search by Job location' />
             <button className='btn'>Search</button>
           </div>
+          {/* filter by job type: remote/full time */}
           <div className="search_item3">
-            <select name="" id="">
-              <option>Filter job by</option>
-              <option value="freelancer">Freelancer</option>
-              <option value="remote">Remote</option>
-              <option value="part-time">Part Time</option>
-              <option value="full-time">Full Time</option>
-              <option value="full-time">Contract</option>
+            <select name="" id="" onChange={filterByJobNature}>
+              <option value="Filter job by">Filter job by</option>
+              <option value="Freelance">Freelance</option>
+              <option value="Remote">Remote</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Contract">Contract</option>
             </select>
           </div>
         </div>
@@ -37,13 +55,13 @@ const Jobs = () => {
         <section className='job_output'>
           <div className="job_output_box">
             {
-              jobs.map((job,i) => (
+              jobsData.map((jobData, i) => (
                 <div key={i} className="job_output_item">
-                  <img src={job.logo} alt="" />
-                  <p className='postedAt'>{job.postedAt}</p>
-                  <h3 className='position'>{job.position}</h3>
-                  <p className='company'>{job.company}</p>
-                  <p className='location'>Location: <span className='location_details'>{job.location}</span></p>
+                  <img src={jobData.logo} alt="" />
+                  <p className='postedAt'>{jobData.postedAt}</p>
+                  <Link to={jobData.position}><h3 className='position'>{jobData.position}</h3></Link>
+                  <p className='company'>{jobData.company}</p>
+                  <p className='location'>Location: <span className='location_details'>{jobData.location}</span></p>
                 </div>
               ))
             }
