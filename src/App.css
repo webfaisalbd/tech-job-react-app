@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* button start */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #0A66C2;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn:hover {
+  color: #ffffff;
+  background: #3b5998;
 }
+/* button end */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/* header start */
+header {
+  width: 100%;
+  height: 100px;
+  background: #0A66C2;
+  border-bottom-left-radius: 50px;
+  
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header h1 {
+  color: #ffffff;
+  margin-left: 100px;
+}
+/* header end */
+
+
+/* job body start */
+.jobs_body {
+  margin: 0 60px;
+  margin-top: -25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: #ffffff;
+  min-height: 87vh;
+  
+  border-top-left-radius: 20px ;
+  border-top-right-radius: 20px ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.jobs_container {
+  padding: 20px;
+}
+
+.search_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_item {
+  padding: 10px 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  max-width: 330px;
+  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search_item2 {
+  padding: 10px 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  max-width: 300px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.search_item3 select {
+  padding: 15px 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  width: 300px;
+  border: none;
+  outline: none;
+}
+
+span {
+  color: #0A66C2;
+}
+
+/* job body end */
+
+
+
+
+
+/* responsiveness  */
+@media (max-width: 935px){
+  .search_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
