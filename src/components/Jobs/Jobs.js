@@ -7,11 +7,13 @@ import jobs from '../../data/data';
 
 const Jobs = () => {
   const [jobsData, setJobsData] = useState(jobs);
-  // console.log(jobsData);
+  const [searchText, setSearchText] = useState('');
+  // console.log(searchText);
 
   // filter By Job
   const filterByJobNature = (e) => {
     const filterData = e.target.value;
+    // console.log(filterData)
     const filteredOutput = jobs.filter((job) => {
       return (job.contract === filterData);
     })
@@ -19,6 +21,7 @@ const Jobs = () => {
     if(filterData === 'Filter job by'){
       setJobsData(jobs);
     }else {
+      // console.log("array:",filteredOutput)
       setJobsData(filteredOutput);
     }
   }
@@ -29,9 +32,10 @@ const Jobs = () => {
       <div className="jobs_container">
         {/* search box  */}
         <div className="search_box">
+          {/* search by job title, company */}
           <div className="search_item">
             <span><BiSearch /></span>
-            <input type="text" name="" id="" placeholder='Search by Job title, companies' />
+            <input type="text" name="" id="" onChange={(e)=> setSearchText(e.target.value)} placeholder='Search by Job title, companies' />
           </div>
           <div className="search_item2">
             <span><GoLocation /></span>
@@ -55,7 +59,10 @@ const Jobs = () => {
         <section className='job_output'>
           <div className="job_output_box">
             {
-              jobsData.map((jobData, i) => (
+              jobsData.filter((jobData)=> {
+                return jobData.position.toLowerCase().includes(searchText) || jobData.company.toLowerCase().includes(searchText);
+              })
+              .map((jobData, i) => (
                 <div key={i} className="job_output_item">
                   <img src={jobData.logo} alt="" />
                   <p className='postedAt'>{jobData.postedAt}</p>
