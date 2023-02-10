@@ -10,4 +10,4 @@ website demo: https://tech-job-react-app.netlify.app/
 
 ---    
 
-    <img src='/public/website-demo.png' />
+<img src='/public/website-demo.png' />
