@@ -167,14 +167,75 @@ span {
   color: #000000
 }
 
-
-
-
 /* job output end */
 
 /* job body end */
 
 
+
+/* job details start */
+.jobs_details_body {
+  padding: 30px
+}
+
+.job-details-first-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-site-btn {
+  padding: 7px 15px;
+  background: #0A66C2;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.postedAt {
+  font-size: 13px;
+  color: gray;
+  padding: 5px 0;
+}
+
+.apply-btn {
+  padding: 6px 12px;
+  background: #3b5998;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.job-details-second-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px 0;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin_top_bottom_20 {
+  margin: 20px 0;
+}
+
+.job-details-location {
+  color: blue;
+  font-size: 14px;
+}
+
+.job_details_text_style {
+  color: gray;
+  font-family: 'Itim', cursive;
+}
+
+.list_style {
+  margin-left: 40px;
+  font-family: 'Itim', cursive;
+}
+/* job details end */
 
 
 
